@@ -1,0 +1,40 @@
+JAVA OOPs Coding Exercise
+Implement a Java class Exercise that contains a method to find the length of
+the longest repeating subsequence in a given string. A repeating subsequence 
+is defined as a subsequence that appears at least twice in the original string, 
+and the two occurrences do not overlap (i.e., they are at different positions in the original string).
+
+The objective of this exercise is to demonstrate your understanding and application
+of Object-Oriented Programming (OOP) principles using Core Java.
+
+
+To solve the problem of finding the length of the longest repeating subsequence in a string, 
+think about how you can use dynamic programming to track the subsequences. Use a 2D array to store 
+the lengths of the longest repeating subsequences up to each position in the string. Compare characters
+at different positions to decide whether to include them in the subsequence or not.
+
+
+
+To find the length of the longest repeating subsequence, we can use a dynamic programming approach. Here’s a step-by-step explanation:
+
+Initialization:
+
+Create a 2D array dp of size (n+1) x (n+1) where n is the length of the input string str. This array will store the lengths of the longest repeating subsequences for substrings of str.
+
+Filling the DP Table:
+
+Iterate through the string using two nested loops, with indices i and j.
+
+For each pair of indices (i, j):
+
+If the characters at positions i-1 and j-1 in the string are the same and i is not equal to j, update dp[i][j] to 1 + dp[i-1][j-1]. This means that the characters are part of a repeating subsequence.
+
+Otherwise, update dp[i][j] to the maximum of dp[i][j-1] and dp[i-1][j]. This step ensures that the length of the longest repeating subsequence is carried forward from previous computations.
+
+Result:
+
+The value at dp[n][n] will contain the length of the longest repeating subsequence for the entire string.
+
+
+
+
